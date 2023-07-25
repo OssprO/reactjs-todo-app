@@ -1,0 +1,16 @@
+.your-tasks {
+	&__hide-btn {
+		padding: 0.25rem 0.75rem;
+		background: none;
+		border: none;
+		border-radius: 0.25rem;
+		color: #3c3c3c;
+		font-size: 1rem;
+		font-weight: 900;
+		cursor: pointer;
+		&:hover {
+			background-color: #ffffff11;
+			color: #000000;
+		}
+	}
+}

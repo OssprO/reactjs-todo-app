@@ -1,0 +1,53 @@
+.create-task {
+    flex: 1 0 35%;
+    padding: 2rem;
+    background-color: #ffffffdc;
+    box-shadow: 2px 2px 12px #69696999;
+    border-radius: 1rem;
+    min-height: 90vh;
+    &__form {
+        &__input {
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            font-size: 0.95rem;
+            margin: 1rem 0;
+            min-width: 320px;
+            width: 100%;
+            &:focus {
+                border: none;
+                outline-color: transparent;
+                box-shadow: 2px 2px 12px #69696999;
+            }
+        }
+        &__submit {
+            background-color: #e73c7e;
+            border-radius: 0.5rem;
+            border-style: none;
+            box-sizing: border-box;
+            color: #ffffff;
+            cursor: pointer;
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            height: 40px;
+            line-height: 20px;
+            list-style: none;
+            margin: 0;
+            outline: none;
+            padding: 10px 16px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition: color 100ms;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            &:hover,
+            &:focus {
+                background-color: #f082ac;
+            }        
+        }
+    }
+}

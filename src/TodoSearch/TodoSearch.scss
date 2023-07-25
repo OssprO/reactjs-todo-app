@@ -1,0 +1,105 @@
+.search-form {
+    --input-text-color: #fff;
+    --input-bg-color: #283542;
+    --focus-input-bg-color: #283542;
+    --text-color: #949faa;
+    --active-color: #e73c7e;
+    --width-of-input: 380px;
+    --inline-padding-of-input: 1.2em;
+    --gap: 0.9rem;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: var(--width-of-input);
+    position: relative;
+    isolation: isolate;
+    margin: auto;
+
+    &__fancy-bg {
+        position: absolute;
+        width: 100%;
+        inset: 0;
+        background: var(--input-bg-color);
+        border-radius: 30px;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+
+    &__search-icon,
+    &__close-btn {
+        position: absolute;
+    }
+
+    &__search-icon {
+        fill: var(--text-color);
+        left: var(--inline-padding-of-input);
+    }
+
+    &__close-btn {
+        border: none;
+        right: var(--inline-padding-of-input);
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        padding: 0.1em;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--active-color);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__input {
+        color: var(--input-text-color);
+        width: 100%;
+        margin-inline: min(2em, calc(var(--inline-padding-of-input) + var(--gap)));
+        background: none;
+        border: none;
+        &:focus {
+            outline: none;
+            ~ .search-form__fancy-bg {
+                border: 1px solid var(--active-color);
+                background: var(--focus-input-bg-color);
+            }
+            ~ .search-form__search-icon {
+                fill: var(--active-color);
+            }
+        }
+        &::placeholder {
+            color: var(--text-color);
+        }
+        &:valid ~ .close-btn {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+label {
+    width: 100%;
+    padding: 0.8em;
+    height: 40px;
+    padding-inline: var(--inline-padding-of-input);
+    display: flex;
+    align-items: center;
+}
+
+svg {
+    width: 17px;
+    display: block;
+}
+
+/* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+  -webkit-transition-delay: 9999s;
+}
